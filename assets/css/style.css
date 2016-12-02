@@ -1,0 +1,117 @@
+html, body {
+	width: 960px;
+	margin: 0 auto;
+	/*overflow: auto;	*/
+	background-image: url("../images/vaio_hard_edge.png");
+	height: 100%;
+}
+
+#wrapper {
+	position: relative;
+	min-height: 100%;
+	}
+
+#animalButts {
+	min-height: 47px;
+	margin: 0;
+	padding: 0;
+}
+
+#animalList {
+	font-weight: bold;
+}
+
+#header  {
+	text-align: center;
+	margin: 5px 0 5px 0;
+	padding: 10px 0 0px 0;
+	text-shadow: lightblue 1px 1px;
+	border-radius: 5px; 
+	background-image: linear-gradient(45deg, transparent, #B5FFA1, #E774E8, transparent);
+	opacity: 1;
+}
+
+h4, h3 {
+	padding: 0 0 10px 0;
+}
+
+.btn {
+	margin: 5px;
+}
+
+.panel-footer {
+	padding: 2px;
+}
+
+#userInput {
+	margin: 5px;
+	box-shadow: 1px 1px green;
+}
+
+#submit {
+	margin: 0 0 0 10px;
+	background-color: lightblue;
+	box-shadow: 1px 1px green;
+}
+
+#images {
+	background-image: radial-gradient(circle, transparent, #FFFE79 25%, transparent, #B5FFA1 35%, transparent, transparent);
+	margin-bottom: 60px;
+}
+
+
+img {
+	padding: 5px 0 5px 0;
+}
+
+.message {
+	top: 0;
+	margin: 0 auto;
+	padding: 5px 0 5px 0;
+	text-align: center;
+}
+
+.thumbnail {
+	margin: 5px 2px 5px 2px;
+	height: 200px;
+	float: left;
+	text-align: center;
+	padding: 0;
+	background-size: contain;
+	overflow: hidden;
+	box-shadow: lightblue 1px 1px;
+}
+
+.container {
+	width: 960px;
+	margin: 0;
+	padding: 0;
+	background-color: transparent;
+}
+
+hr {
+	clear: both;
+	border-color: transparent;
+}
+
+.foot {
+	display: flex;
+	justify-content: center;
+	position: absolute;  /* for sticky footnote */
+	height: auto;		   /* look at body for margin to match footnote height */
+	bottom: 0;		   /* bottom of page */
+	width: 960px;
+	}
+
+footer {
+	width: 250px;
+	text-align: center;
+	text-shadow: 1px 2px lightblue;
+	border-left: dotted orange 1px;
+	border-right: dotted orange 1px;
+	border-top: dotted red 1px;
+	border-bottom: dotted magenta 1px;
+	border-radius: 15px;
+	margin-bottom: 10px;
+	padding: 5px 0 5px 0;
+	}

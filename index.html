@@ -1,32 +1,53 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<title>GifTastic</title>
-	<script src='http://code.jquery.com/jquery-2.1.3.min.js'></script>
-	<script type="text/javascript" src="assets/javascript/logic.js"></script>
-	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
-	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <title>giftastic</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
+
 <body>
-
-<!-- a div for buttons to be created as user searches -->
-<div id="animalButts">
-
+<div id="wrapper">
+    <div class="container">
+        <div id="header">
+            <h2>GifTastic!</h2>
+            <h3>Animated Gifs</h3>
+        </div>
+    </div>
+    <div class="container">
+        <div class="panel panel-default">
+            <div class="panel-heading" id="animalList">Animals List</div>
+            <!-- buttons created as user enters earches -->
+            <div class="panel-body" id="animalButts"></div>
+            <div class="panel-footer"></div>
+        </div>
+         <!-- user input form field -->
+        <form>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+            <label class="control-label" for="userInput">Add an animal</label>
+            <input type="text" id="userInput" autofocus>
+            <input type="submit" class="btn button-default" id="submit" value="submit">
+            </div>
+        </div>
+    	</form>
+    </div>
+    <!-- images display area -->
+    <div id="images" class="container">
+    </div>
+    <hr>
+    <div class="foot">
+        <footer>
+            &#169; Copyright 2016 Jorge Wong
+        </footer>
+    </div> 
 </div>
 
-<!-- a form to take user input and submit button -->
-<form>
-	<label for="userInput">Add an animal</label>
-	<input type="text" id="userInput" autofocus>
-	<input type="submit" id="submit" value="submit">
-</form>
-
-<!-- a div to contain images retrieved from gyphi-->
-<div id="images">
-
-</div>
-
-
+    <script src='http://code.jquery.com/jquery-2.1.3.min.js'></script>
+	<script type="text/javascript" src="assets/javascript/logic.js"></script>
 
 </body>
 </html>
