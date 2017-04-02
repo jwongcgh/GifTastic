@@ -2,7 +2,7 @@
 
 Dynamic webpage that populates with user selected images retrieved from GIPHY API.
 
-[GifTastic in action Link]https://immense-garden-23061.herokuapp.com/)
+[GifTastic in action Link](https://immense-garden-23061.herokuapp.com/)
 
 ### App Overview
 
