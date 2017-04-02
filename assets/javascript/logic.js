@@ -7,12 +7,11 @@ $(document).ready(function() {
     var thisButton = "";        // variable especifying query to pass into gyphi's API
 
 
-    // ****************************** user input listening event ****************************** //  
-    
+    // ****************************** user input listening event ****************************** //
+
     $("#submit").on("click", function() {
 
         var userEntry = $("#userInput").val().trim();
-        console.log("userEntry: " + userEntry);
 
         // checks for invalid and duplicate entries
         // this check CANNOT prevent valid word entries other than animals topic/theme
@@ -26,7 +25,6 @@ $(document).ready(function() {
             animals.push(userEntry);
         }
 
-        console.log("animals array: " + animals);
         // empties user input field
         $("#userInput").val("");
         testEntry = true;
@@ -36,7 +34,7 @@ $(document).ready(function() {
     }); // end onclick input
 
 
-    // ****************************** buttons generate function ****************************** //  
+    // ****************************** buttons generate function ****************************** //
 
     function createButts() {
         // empties html button field before creating them
@@ -67,7 +65,7 @@ $(document).ready(function() {
     } // end createButts
 
 
-    // ****************************** retrieve info from gyphi ****************************** // 
+    // ****************************** retrieve info from gyphi ****************************** //
 
     function retrieveInfo() {
 
@@ -76,10 +74,8 @@ $(document).ready(function() {
         // else: testEntry = true, the request for giphy content came from user entry step
         if (!testEntry) {
             var searchQuery = thisButton;
-            // console.log("searchQuery: " + searchQuery);
         } else {
             var searchQuery = animals[animals.length - 1];
-            // console.log("searchQuery: " + searchQuery);
         }
 
         var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + searchQuery + "&api_key=dc6zaTOxFJmzC&limit=10";
@@ -91,8 +87,6 @@ $(document).ready(function() {
             // else: testEntry = true, forwards to invalidEntry function since no content was found in giphy
             if (!testEntry) {
                 $("#images").empty();
-                console.log(response);
-                console.log(response.data.length);
 
                 for (i = 0; i < response.data.length; i++) {
                     var imgCont = $("<div>");
@@ -118,37 +112,33 @@ $(document).ready(function() {
     }; // end retrieveInfo
 
 
-    // ****************************** invalid Entry function ****************************** // 
+    // ****************************** invalid Entry function ****************************** //
 
     function invalidEntry() {
         // the button was created but found to be an invalid entry
         // remove/pop entries that cannot be found in APIs database, this was the last user entry in animals array
         // testEntry set to false and createButts function is called to refresh buttons field, invalid button is removed in the process
         animals.pop();
-        console.log("removed invalid entry from array");
-        console.log("array is now: " + animals);
         testEntry = false;
         createButts();
     } // end invalidEntry
 
 
-    // ****************************** querying images from API server ****************************** // 
+    // ****************************** querying images from API server ****************************** //
 
-    // listening for created buttons click 
+    // listening for created buttons click
     // testEntry is set to false and retrieveInfo function is called to show content from gyphi related to the clicked button
     // this button info is stored in thisButton variable
     $(document).on("click", ".animalButts", function() {
         testEntry = false;
         thisButton = $(this).data("name");
-        console.log("searchQuery thisButton is: " + thisButton);
         retrieveInfo();
     }); // end of on-click
 
-    // ****************************** querying images from API server ****************************** // 
+    // ****************************** querying images from API server ****************************** //
 
     // change from static to animated when clicked on image
     $(document.body).on("click", ".image", function() {
-        console.log("clicked");
 
         var state = $(this).attr("data-state")
         if (state === "still") {
